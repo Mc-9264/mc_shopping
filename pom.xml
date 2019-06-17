@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.zpark</groupId>
+	<artifactId>springcloud_02_shopping</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncouding>UTF-8</project.build.sourceEncouding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<!-- 用于管理当前项目与所有子项目中jar文件的本版 -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- 导入springcloud的依赖 -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Finchley.SR2</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- 导入springboot的依赖 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>2.0.6.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- 导入MySQL的依赖 -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.47</version>
+			</dependency>
+			<!-- 导入Druid数据库连接池的依赖 -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>1.1.16</version>
+			</dependency>
+			<!-- 导入MyBatis的依赖 -->
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>2.0.1</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>springcloud_02_shopping_common</module>
+		<module>springcloud_02_shopping_fileserver</module>
+		<module>springcloud_02_shopping_user_provider</module>
+		<module>springcloud_02_spopping_goods_provider</module>
+		<module>springcloud_02_shopping_orders_provider</module>
+    <module>springcloud_02_shopping_eureka_server</module>
+    <module>springcloud_02_shopping-eureka-server</module>
+    <module>springcloud_02_shopping_zuul</module>
+	</modules>
+</project>
